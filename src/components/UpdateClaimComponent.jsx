@@ -1,55 +1,56 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import ClaimService from '../services/ClaimService';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
 
 const UpdateClaimComponent = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const[claims,setClaims]=useState({
-    policy:''
-  });
+  const [claim, setClaim] = useState('');
 
-  const changeClaimHandler=(event)=>{
-    setClaims(event.target.value);
+  const changeClaimHandler = (event) => {
+    setClaim(event.target.value);
   };
 
-  useEffect(()=>{
-    ClaimService.getAllClaimsById(id).then((res)=>{
-      const obj=res.data;
-      setClaims({
-        claim:obj.claim,
-      })
-    })
-  },[id]);
+  useEffect(() => {
+    // Fetch claim details by ID
+    ClaimService.getAllClaimsById(id).then((res) => {
+      setClaim(res.data.claim);
+    }).catch((error) => {
+      console.error('Error fetching claim:', error);
+    });
+  }, [id]);
+
   const updateClaim = (e) => {
     e.preventDefault();
-    let obj = { claims: claims };
-    ClaimService.updateClaim(id,obj).then((res) => {
+    const updatedClaim = { claim }; // Adjust the payload if necessary
+    ClaimService.updateClaim(id, updatedClaim).then((res) => {
       navigate("/claim");
+    }).catch((error) => {
+      console.error('Error updating claim:', error);
     });
   };
+
   return (
     <div>
-      <br></br>
+      <br />
       <div className="container">
         <div className="row">
-          <div className="card col-md-6 offset-md-3 offset-md-3">
+          <div className="card col-md-6 offset-md-3">
             <h3 className="text-center">Update Claim</h3>
             <div className="card-body">
               <form>
                 <div className="form-group">
-                  <label> Claim: </label>
+                  <label>Claim:</label>
                   <input
-                    placeholder="claims"
-                    name="claims"
+                    type="text"
+                    placeholder="Enter claim"
+                    name="claim"
+                    
                     className="form-control"
-                    // value={this.policy}
+                    value={claim}
                     onChange={changeClaimHandler}
                   />
                 </div>
-
                 <button
                   className="btn btn-success"
                   onClick={updateClaim}
@@ -62,7 +63,7 @@ const UpdateClaimComponent = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UpdateClaimComponent
+export default UpdateClaimComponent;
