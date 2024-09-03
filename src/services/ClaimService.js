@@ -17,11 +17,13 @@ const CLAIM_GET_URL="http://localhost:8081/api/get/claim"
         return axios.post(CLAIM_GET_URL+'/'+id);
     }
 
-    const updatePolicy = (id, claim) => {
-        console.log("obj",claim,id)
+    const updateClaim = (id, claim) => {
+        // console.log("obj",claim,id)
         return axios.put(CLAIM_UPDATE_URL + '/' + id, claim)
+
+        
             .then(response => {
-                console.log('Policy updated successfully:', response.data);
+                console.log('Claim updated successfully:', response.data);
                 return response.data;
             })
             .catch(error => {
@@ -35,5 +37,5 @@ export default  {
     getAllClaims,
     createClaim,
     getAllClaimsById,
-    updatePolicy
+    updateClaim
   };

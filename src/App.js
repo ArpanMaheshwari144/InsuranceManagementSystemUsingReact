@@ -8,6 +8,8 @@ import CreateCustomerComponents from './components/CreateCustomerComponents';
 import CreateClaimComponents from './components/CreateClaimComponents';
 import UpdatePolicyComponent from './components/UpdatePolicyComponent';
 import UpdateClaimComponent from './components/UpdateClaimComponent';
+import RegisterComponent from './components/RegisterComponent';
+import LoginComponent from './components/LoginComponent';
 
 
 
@@ -24,6 +26,9 @@ function App() {
         <Route path='/create-claim' element={<CreateClaimComponents/>}></Route>
         <Route path='/update-policy/:id' element={<UpdatePolicyComponent/>}></Route>
         <Route path='/update-claim/:id' element={<UpdateClaimComponent/>}></Route>
+        <Route path='/save' element={<RegisterComponent/>}></Route>
+        <Route path='/login' element={<LoginComponent/>}></Route>
+        
 
       </Routes>
       {/* <ListClaimComponents/> */}
