@@ -34,16 +34,13 @@ const RegisterComponent = () => {
      
   };
   return (
-    <div>
     <div class="container mt-4" >
-    <div class="card">
-        <h1>User Form</h1>
+    <div class="">
+        <h1>Registration Form</h1>
         <form>
 
         <div class="form-group">
-          <label>Username </label>
           <input type="text"  class="form-control" id="username" placeholder="Enter Name"
-          
           value={username}
           onChange={(event) => {
             setUsername(event.target.value);
@@ -51,9 +48,7 @@ const RegisterComponent = () => {
           />
         </div>
         <div class="form-group">
-          <label>email </label>
           <input type="text"  class="form-control" id="email" placeholder="Enter EMAIL"
-          
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
@@ -61,21 +56,16 @@ const RegisterComponent = () => {
           />
         </div>
         <div class="form-group">
-          <label>Password </label>
           <input type="text"  class="form-control" id="password" placeholder="Enter Password"
-          
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
           />
         </div>
-        <button type="submit" class="btn btn-primary" onClick={saveUser}>save user</button>
-        <button type="submit" class="btn btn-primary" onClick={loginUser}>Logon</button>
+        <button type="submit" class="btn btn-primary mx-2" onClick={saveUser}>Save User</button>
+        <button type="submit" class="btn btn-primary" onClick={loginUser}>Login</button>
         </form>
-       
-
-    </div>
     </div>
     </div>
   )

@@ -21,7 +21,8 @@ const ListClaimComponents = () => {
         <div>
             <h2 className="text-center">Claims</h2>
             <div className="text-right mb-3">
-                <Link to="/create-claim" className="btn btn-primary">Add Claim</Link>
+                <Link to="/create-claim" className="btn btn-primary mx-2">Add Claim</Link>
+                <Link to='/policy' className='btn btn-primary'>Go To Policy</Link>
             </div>
             <div className="row">
                 <table className="table table-striped table-bordered">
