@@ -15,8 +15,7 @@ const CreateClaimComponents = () => {
         let obj = { claims: claim };
         console.log("obj => " + JSON.stringify(obj));
         ClaimService.createClaim(obj).then(res => {
-            navigate("/api/create/claims"); 
-            alert("Successfully created claim");
+            navigate("/claim"); 
         })
     };
 

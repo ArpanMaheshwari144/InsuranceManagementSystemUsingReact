@@ -36,7 +36,8 @@ const ListPolicyComponents = () => {
         <div>
             <h2 className="text-center">Policies List</h2>
             <div className='text-right mb-3'>
-                <Link to='/create-policy' className='btn btn-primary'>Add Policy</Link>
+                <Link to='/create-policy' className='btn btn-primary mx-2'>Add Policy</Link>
+                <Link to='/claim' className='btn btn-primary'>Go To Claim</Link>
 
             </div>
             <div className='row'>
