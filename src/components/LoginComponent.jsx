@@ -30,14 +30,11 @@ const LoginComponent = () => {
      
   };
   return (
-    <div>
     <div class="container mt-4" >
-    <div class="card">
+    <div class="">
         <h1>Login Form</h1>
         <form>
-
         <div class="form-group">
-          <label>email </label>
           <input type="text"  class="form-control" id="email" placeholder="Enter EMAIL"
           
           value={email}
@@ -47,7 +44,6 @@ const LoginComponent = () => {
           />
         </div>
         <div class="form-group">
-          <label>Password </label>
           <input type="text"  class="form-control" id="password" placeholder="Enter Password"
           
           value={password}
@@ -56,11 +52,9 @@ const LoginComponent = () => {
           }}
           />
         </div>
-        <button type="submit" class="btn btn-primary" onClick={loginUser}>login</button>
         </form>
-
     </div>
-    </div>
+    <button type="submit" class="btn btn-primary" onClick={loginUser}>Login</button>
     </div>
   )
 }
