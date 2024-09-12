@@ -26,7 +26,7 @@ function App() {
         <Route path='/create-claim' element={<CreateClaimComponents/>}></Route>
         <Route path='/update-policy/:id' element={<UpdatePolicyComponent/>}></Route>
         <Route path='/update-claim/:id' element={<UpdateClaimComponent/>}></Route>
-        <Route path='/save' element={<RegisterComponent/>}></Route>
+        <Route path='/' element={<RegisterComponent/>}></Route>
         <Route path='/login' element={<LoginComponent/>}></Route>
         
 
