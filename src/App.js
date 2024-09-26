@@ -10,6 +10,8 @@ import UpdatePolicyComponent from './components/UpdatePolicyComponent';
 import UpdateClaimComponent from './components/UpdateClaimComponent';
 import RegisterComponent from './components/RegisterComponent';
 import LoginComponent from './components/LoginComponent';
+import ListUploadFileData from './components/ListUploadFileData';
+import ExcelUploadFile from './components/ExcelUploadFile';
 
 
 
@@ -28,6 +30,8 @@ function App() {
         <Route path='/update-claim/:id' element={<UpdateClaimComponent/>}></Route>
         <Route path='/' element={<RegisterComponent/>}></Route>
         <Route path='/login' element={<LoginComponent/>}></Route>
+        <Route path='/upload' element={<ListUploadFileData/>}></Route>
+        <Route path='/excelfileupload' element={<ExcelUploadFile/>}></Route>
         
 
       </Routes>

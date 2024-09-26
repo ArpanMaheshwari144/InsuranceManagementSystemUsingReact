@@ -13,15 +13,13 @@ const CLAIM_GET_URL="http://localhost:8081/api/get/claim"
         return axios.post(CLAIM_POST_URL,claim);
     }
 
-    const getAllClaimsById=(id)=>{
-        return axios.post(CLAIM_GET_URL+'/'+id);
+    const getAllClaimsById1=(id)=>{
+        return axios.get(CLAIM_GET_URL+'/'+id);
     }
 
     const updateClaim = (id, claim) => {
-        // console.log("obj",claim,id)
+        console.log("obj",claim,id)
         return axios.put(CLAIM_UPDATE_URL + '/' + id, claim)
-
-        
             .then(response => {
                 console.log('Claim updated successfully:', response.data);
                 return response.data;
@@ -36,6 +34,6 @@ const CLAIM_GET_URL="http://localhost:8081/api/get/claim"
 export default  {
     getAllClaims,
     createClaim,
-    getAllClaimsById,
+    getAllClaimsById1,
     updateClaim
   };

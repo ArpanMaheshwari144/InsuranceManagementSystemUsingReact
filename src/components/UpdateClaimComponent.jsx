@@ -12,21 +12,20 @@ const UpdateClaimComponent = () => {
   };
 
   useEffect(() => {
-    // Fetch claim details by ID
-    ClaimService.getAllClaimsById(id).then((res) => {
-      setClaim(res.data.claim);
-    }).catch((error) => {
-      console.error('Error fetching claim:', error);
+    ClaimService.getAllClaimsById1(id).then((res)  => {
+        const obj = res.data;
+        setClaim({
+            claim: obj.claim,   
+        });
     });
-  }, [id]);
+}, [id]); 
 
   const updateClaim = (e) => {
     e.preventDefault();
-    const updatedClaim = { claim }; // Adjust the payload if necessary
-    ClaimService.updateClaim(id, updatedClaim).then((res) => {
+    let obj = { claims: claim };
+    console.log(obj)
+    ClaimService.updateClaim(id,obj).then((res) => {
       navigate("/claim");
-    }).catch((error) => {
-      console.error('Error updating claim:', error);
     });
   };
 
@@ -42,12 +41,10 @@ const UpdateClaimComponent = () => {
                 <div className="form-group">
                   <label>Claim:</label>
                   <input
-                    type="text"
-                    placeholder="Enter claim"
+                    placeholder="claim"
                     name="claim"
-                    
                     className="form-control"
-                    value={claim}
+                    // value={this.policy}
                     onChange={changeClaimHandler}
                   />
                 </div>

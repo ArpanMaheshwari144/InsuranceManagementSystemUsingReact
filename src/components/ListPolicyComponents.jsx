@@ -16,15 +16,7 @@ const ListPolicyComponents = () => {
         navigate(`/update-policy/${id}`);
     }
     const handleLogout = () => {
-        const token = localStorage.getItem('authToken');
-        console.log('Token before removal:', token);
-
-        // Remove the token
-        localStorage.removeItem('authToken');
-
-        // Check and log the token after removal
-        const removedToken = localStorage.getItem('authToken');
-        console.log('Token after removal:', removedToken);
+        // sessionStorage.clear();
         navigate('/login');
     };
     const deletePolicy = (id) => {
